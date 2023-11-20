@@ -7,7 +7,7 @@ void FragTrap::highFivesGuys()
     std::cout << "High Five!\n";
 }
 
-FragTrap::FragTrap(std::string Name)
+FragTrap::FragTrap(std::string Name):ClapTrap(Name)
 {
     _Name = Name;
     _hp = 100;

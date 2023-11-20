@@ -16,7 +16,7 @@ void ScavTrap::attack(const std::string& target)
     std::cout << "***** actual energy points is: " << _ep << " *****\n\n";
 }
 
-ScavTrap::ScavTrap(std::string Name)
+ScavTrap::ScavTrap(std::string Name):ClapTrap(Name)
 {
     _Name = Name;
     _hp = 100;
