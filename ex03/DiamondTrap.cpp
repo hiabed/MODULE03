@@ -7,7 +7,7 @@ void DiamondTrap::whoAmI()
     std::cout << "My name is: " << _Name << " and my clapTrap name is: " << ClapTrap::_Name << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string Name):ClapTrap(Name + "_clap_name") ,FragTrap(Name) ,ScavTrap(Name)
+DiamondTrap::DiamondTrap(std::string Name):ClapTrap(Name + "_clap_name"), FragTrap(Name + "_clap_name"), ScavTrap(Name + "_clap_name")
 {
     _Name = Name;
     _hp = 100; //frag
