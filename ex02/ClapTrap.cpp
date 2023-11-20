@@ -45,18 +45,22 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 ClapTrap::ClapTrap()
 {
-    std::cout << "Default constructor called\n";
+    _Name = "Clap";
+    _hp = 10;
+    _ep = 10;
+    _ad = 0;
+    std::cout << "ClapTrap Default constructor called\n";
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
-    std::cout << "Copy constructor called\n";
+    std::cout << "ClapTrap Copy constructor called\n";
     *this = other;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
-    std::cout << "Copy assignment operator called\n";
+    std::cout << "ClapTrap Copy assignment operator called\n";
     if(this != &other)
     {
         _Name = other._Name;
@@ -69,5 +73,5 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Destructor called\n";
+    std::cout << "ClapTrap Destructor called\n";
 }
