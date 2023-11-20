@@ -4,7 +4,7 @@ void ScavTrap::guardGate()
 {
     if (_ep <= 0 || _hp <= 0)
         return ;
-    std::cout << " ScavTrap is now in Gate keeper mode.\n";
+    std::cout << "ScavTrap is now in Gate keeper mode.\n";
 }
 
 void ScavTrap::attack(const std::string& target)
@@ -28,18 +28,22 @@ ScavTrap::ScavTrap(std::string Name)
 
 ScavTrap::ScavTrap()
 {
-    std::cout << "Default constructor called\n";
+    _Name = "Scav";
+    _hp = 100;
+    _ep = 50;
+    _ad = 20;
+    std::cout << "ScavTrap Default constructor called\n";
 }
 
-ScavTrap::ScavTrap(const ScavTrap &other)
+ScavTrap::ScavTrap(const ScavTrap &other):ClapTrap(other)
 {
-    std::cout << "Copy constructor called\n";
+    std::cout << "ScavTrap Copy constructor called\n";
     *this = other;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
-    std::cout << "Copy assignment operator called\n";
+    std::cout << "ScavTrap Copy assignment operator called\n";
     if(this != &other)
     {
         _Name = other._Name;
@@ -52,5 +56,5 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "Destructor called\n";
+    std::cout << "ScavTrap Destructor called\n";
 }

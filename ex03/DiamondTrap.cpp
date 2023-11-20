@@ -10,27 +10,31 @@ void DiamondTrap::whoAmI()
 DiamondTrap::DiamondTrap(std::string Name):ClapTrap(Name + "_clap_name")
 {
     _Name = Name;
-    _hp = 100;
-    _ep = 100;
-    _ad = 30;
+    _hp = 100; //frag
+    _ep = 50;  //scav
+    _ad = 30;  //frag
     std::cout << "DiamondTrap Name is: " << _Name << std::endl;
     std::cout << "With HP of " << _hp << " And energy points of " << _ep << " and attak damage of " << _ad << "\n\n";
 }
 
 DiamondTrap::DiamondTrap()
 {
-    std::cout << "Default constructor called\n";
+    _Name = "Diamond";
+    _hp = 100; //frag
+    _ep = 50;  //scav
+    _ad = 30;  //frag
+    std::cout << "DiamondTrap Default constructor called\n";
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &other):ClapTrap(other), FragTrap(other), ScavTrap(other)
 {
-    std::cout << "Copy constructor called\n";
+    std::cout << "DiamondTrap Copy constructor called\n";
     *this = other;
 }
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
 {
-    std::cout << "Copy assignment operator called\n";
+    std::cout << "DiamondTrap Copy assignment operator called\n";
     if(this != &other)
     {
         _Name = other._Name;
@@ -43,5 +47,5 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
 
 DiamondTrap::~DiamondTrap()
 {
-    std::cout << "Destructor called\n";
+    std::cout << "DiamondTrap Destructor called\n";
 }

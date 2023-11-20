@@ -10,27 +10,31 @@ void FragTrap::highFivesGuys()
 FragTrap::FragTrap(std::string Name)
 {
     _Name = Name;
-    _hp = 100; //frag.
-    _ep = 50;  //scav.
-    _ad = 30;  //frag.
+    _hp = 100;
+    _ep = 100;
+    _ad = 30;
     std::cout << "FragTrap Name is: " << _Name << std::endl;
     std::cout << "With HP of " << _hp << " And energy points of " << _ep << " and attak damage of " << _ad << "\n\n";
 }
 
 FragTrap::FragTrap()
 {
-    std::cout << "Default constructor called\n";
+    _Name = "Frag";
+    _hp = 100;
+    _ep = 100;
+    _ad = 30;
+    std::cout << "FragTrap Default constructor called\n";
 }
 
 FragTrap::FragTrap(const FragTrap &other):ClapTrap(other)
 {
-    std::cout << "Copy constructor called\n";
+    std::cout << "FragTrap Copy constructor called\n";
     *this = other;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &other)
 {
-    std::cout << "Copy assignment operator called\n";
+    std::cout << "FragTrap Copy assignment operator called\n";
     if(this != &other)
     {
         _Name = other._Name;
@@ -43,5 +47,5 @@ FragTrap &FragTrap::operator=(const FragTrap &other)
 
 FragTrap::~FragTrap()
 {
-    std::cout << "Destructor called\n";
+    std::cout << "FragTrap Destructor called\n";
 }

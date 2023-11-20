@@ -7,15 +7,6 @@ void FragTrap::highFivesGuys()
     std::cout << "High Five!\n";
 }
 
-void FragTrap::attack(const std::string& target)
-{
-    if (_ep <= 0 || _hp <= 0)
-        return ;
-    _ep--;
-    std::cout << "FragTrap " << _Name << " attacks " << target << " , causing " << _ad << " points of damage!\n";
-    std::cout << "***** actual energy points is: " << _ep << " *****\n\n";
-}
-
 FragTrap::FragTrap(std::string Name)
 {
     _Name = Name;
@@ -28,18 +19,22 @@ FragTrap::FragTrap(std::string Name)
 
 FragTrap::FragTrap()
 {
-    std::cout << "Default constructor called\n";
+    _Name = "Frag";
+    _hp = 100;
+    _ep = 100;
+    _ad = 30;
+    std::cout << "FragTrap Default constructor called\n";
 }
 
-FragTrap::FragTrap(const FragTrap &other)
+FragTrap::FragTrap(const FragTrap &other):ClapTrap(other)
 {
-    std::cout << "Copy constructor called\n";
+    std::cout << "FragTrap Copy constructor called\n";
     *this = other;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &other)
 {
-    std::cout << "Copy assignment operator called\n";
+    std::cout << "FragTrap Copy assignment operator called\n";
     if(this != &other)
     {
         _Name = other._Name;
@@ -52,5 +47,5 @@ FragTrap &FragTrap::operator=(const FragTrap &other)
 
 FragTrap::~FragTrap()
 {
-    std::cout << "Destructor called\n";
+    std::cout << "FragTrap Destructor called\n";
 }
